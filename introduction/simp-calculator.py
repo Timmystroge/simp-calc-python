@@ -46,10 +46,8 @@ elif operation == "divide": #todo: IF USER OPERATES TO DIVIDE
     divide(number1, number2)
 elif operation == "multiply": #todo: IF USER OPERATES TO MULTIPLY
     multiply(number1, number2)
-else:  print("\n Oops, something went Wrong, Seems you didn't follow the intruction! Try Again Bitch.")
+else:  print("\n Oops, something went Wrong, Seems you didn't follow the intruction! Try Again.")
 
 #? Lol
 print("\n Thanks for using our App!")
 
-#Python Sweet sha!😂😂😂
-#No Need To Trace Curly Brackets { } Up and Down😭😭😂💃
