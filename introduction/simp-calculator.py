@@ -4,50 +4,67 @@
 
 from math import* #Import Math
 
-whatDoWeWantToDo = "now lets build a simple Calculator App"
-print(whatDoWeWantToDo + "\n")
+whatDoWeWantToDo = "lets build a simple Calculator App"
+print(f"{whatDoWeWantToDo} \n")
 
-#? once the user runs the app ask for their name and tell them the app intruction
-user = input("Welcome, What is Your Name?: ").upper() # Change the user input to uppercase
-print("HELLO " + user + ", WITH THIS SIMPLE CALCULATOR, YOU CAN ONLY CALCULATE 2 NUMBERS AT A TIME")
+#? On running the app ask the user for their name and tell them the app's intruction    
+# Change the user input to uppercase
+user = input("Welcome, What is Your Name?: ").upper() 
+print(f"HELLO {user}, WITH THIS SIMPLE CALCULATOR, YOU CAN ONLY CALCULATE 2 NUMBERS AT A TIME")
 
 #? ask for the numbers the user wants to calculate
-number1 = float(input("Enter Number 1: ")) #! Number 1
-operation = input("Operation e.g plus, minus, divide, multiply: ") #! operation
-number2 = float(input("Enter Number 2: ")) #! number2
+#!Prompt user to enter Number 1
+number1 = float(input("Enter Number 1: ")) 
+
+#!Prompt user to enter math operation
+operation = input("Operation e.g plus, minus, divide, multiply: ") 
+
+#!Prompt user to enter Number2
+number2 = float(input("Enter Number 2: ")) 
+
+# reuseable function to display result template start
+def displayResult(currentUser, calculation):
+   result = f"Dear {currentUser}, Your Calculation Result is {str(calculation)}" 
+   return result
+# reuseable function to display result template ends
 
 #? perfom the user calculation
-def add(value1, value2): #todo: this function will add the two provided numbers
-    calculate = ceil(value1 + value2)
-    result = "Dear " + user + ", Your Calcution Result is " + str(calculate)
-    print("\n" + result)
+#todo: this function will add the two provided numbers
+def add(value1, value2): 
+    #Print return result msg template!
+    print(f"\n {displayResult(user, int(value1 + value2))}")
 
-def subtract(value1, value2): #todo: this function will subtract the two provided numbers
-    calculate = ceil(value1 - value2)
-    result = "Dear " + user + ", Your Calcution Result is " + str(calculate)
-    print("\n" + result)
+#todo: this function will subtract the two provided numbers
+def subtract(value1, value2): 
+    #Print return result msg template!
+    print(f"\n {displayResult(user, int(value1 - value2))}")
 
-def divide(value1, value2): #todo: this function will divide the two provided numbers
-    calculate = ceil(value1 / value2)
-    result = "Dear " + user + ", Your Calcution Result is " + str(calculate)
-    print("\n" + result)
+#todo: this function will divide the two provided numbers
+def divide(value1, value2):
+    #Print return result msg template!
+    print(f"\n {displayResult(user, int(value1 / value2))}")
 
-def multiply(value1, value2): #todo: this function will multiply the two provided numbers
-    calculate = ceil(value1 * value2)
-    result = "Dear " + user + ", Your Calcution Result is " + str(calculate)
-    print("\n" + result)
+#todo: this function will multiply the two provided numbers
+def multiply(value1, value2):
+    #Print return result msg template!
+    print(f"\n {displayResult(user, int(value1 * value2))}")
 
 #? PROCESS THE CALCULATION BASED ON THE USER'S OPERATION
-if operation == "plus": #todo: IF USER OPERATES TO ADD
-    add(number1, number2)
-elif operation == "minus": #todo: IF USER OPERATES TO SUBTRACT
-    subtract(number1, number2)
-elif operation == "divide": #todo: IF USER OPERATES TO DIVIDE
-    divide(number1, number2)
-elif operation == "multiply": #todo: IF USER OPERATES TO MULTIPLY
-    multiply(number1, number2)
+#todo: IF USER OPERATES TO ADD
+if operation == "plus": add(number1, number2) 
+    
+#todo: IF USER OPERATES TO SUBTRACT
+elif operation == "minus": subtract(number1, number2) 
+
+#todo: IF USER OPERATES TO DIVIDE
+elif operation == "divide": divide(number1, number2)
+
+#todo: IF USER OPERATES TO MULTIPLY
+elif operation == "multiply": multiply(number1, number2)
+
+#todo: IF USER ENTERS ANY THING OTHER THAN THE ABOVE OPERATIONS
 else:  print("\n Oops, something went Wrong, Seems you didn't follow the intruction! Try Again.")
+
 
 #? Lol
 print("\n Thanks for using our App!")
-
